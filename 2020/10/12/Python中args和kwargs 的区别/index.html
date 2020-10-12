@@ -8,19 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Scrapy爬虫框架的介绍：Scrapy 框架的架构">
+  <meta name="description" content="Python中*args和**kwargs 的区别# 在函数定义中使用*args和kwargs传递可变长参数. *args用作传递非命名键值可变长参数列表（位置参数）; kwargs用作传递键值可变长参数列表# *args表示任何多个无名参数，它是一个tuple">
 <meta property="og:type" content="article">
 <meta property="og:title" content="My Blog">
-<meta property="og:url" content="http://yoursite.com/2020/08/16/Scrapy%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BB%8B%E7%BB%8D/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/10/12/Python%E4%B8%ADargs%E5%92%8Ckwargs%20%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="Scrapy爬虫框架的介绍：Scrapy 框架的架构">
+<meta property="og:description" content="Python中*args和**kwargs 的区别# 在函数定义中使用*args和kwargs传递可变长参数. *args用作传递非命名键值可变长参数列表（位置参数）; kwargs用作传递键值可变长参数列表# *args表示任何多个无名参数，它是一个tuple">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200816175322959.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzM1ODk1OQ==,size_16,color_FFFFFF,t_70#pic_center">
-<meta property="article:published_time" content="2020-08-16T12:53:16.466Z">
-<meta property="article:modified_time" content="2020-08-16T12:53:16.466Z">
+<meta property="article:published_time" content="2020-10-12T02:16:45.774Z">
+<meta property="article:modified_time" content="2020-10-12T13:50:45.845Z">
 <meta property="article:author" content="zhouyan">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200816175322959.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzM1ODk1OQ==,size_16,color_FFFFFF,t_70#pic_center">
   
     <link rel="alternative" href="/atom.xml" title="My Blog" type="application/atom+xml">
   
@@ -156,20 +154,23 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Scrapy爬虫框架的介绍" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Python中args和kwargs 的区别" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Scrapy爬虫框架的介绍："><a href="#Scrapy爬虫框架的介绍：" class="headerlink" title="Scrapy爬虫框架的介绍："></a>Scrapy爬虫框架的介绍：</h2><p>Scrapy 框架的架构<br><img src="https://img-blog.csdnimg.cn/20200816175322959.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzM1ODk1OQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+        <h1 id="Python中-args和-kwargs-的区别"><a href="#Python中-args和-kwargs-的区别" class="headerlink" title="Python中*args和**kwargs 的区别"></a>Python中*args和**kwargs 的区别</h1><p># 在函数定义中使用*args和kwargs传递可变长参数. *args用作传递非命名键值可变长参数列表（位置参数）; kwargs用作传递键值可变长参数列表<br># *args表示任何多个无名参数，它是一个tuple</p>
 <a id="more"></a>
-<p><strong>Scrapy Engine</strong>:    用来处理整个系统的数据流，触发事务是整个框架的核心。<br><strong>Items</strong>： 定义了爬取结果的数据结构，爬取的数据会被赋值成该对象。<br><strong>Sheduler</strong>:  调度器，用来接受引擎发过来的请求并加入队列中，并在引擎再次请求的时候提供给引擎。<br><strong>Downloader</strong> ：下载器，用于下载网页内容，并将网页内容返还给Spider。<br><strong>Spider</strong>：其定义了爬取的逻辑和网页的解析规则，它主要负责解析响应并生成提取结果和新的请求。<br><strong>Item Pipeline</strong>：负责处理由Spider从网页中抽取的项目，主要任务是清洗，验证和存储数据。<br><strong>Downloader Middlewares</strong>:下载器中间件，位于引擎和下载器之间的钩子框架，主要是处理引擎与下载器之间的请求及响应。<br><strong>Spider Middlewares</strong>:位于引擎和Spider之间的钩子框架，主要工作是处理Spider输入的响应和输出的结果及新的请求。</p>
-<p><strong><em>创建项目的命令为：</em></strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy startproject demo</span><br></pre></td></tr></table></figure>
-<p>项目文件结构如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">scrapy.cfg</span><br><span class="line">project/</span><br><span class="line"> __init__.py</span><br><span class="line"> items.py</span><br><span class="line"> piplines.py</span><br><span class="line"> settings.py</span><br><span class="line"> middlewares.py</span><br><span class="line"> spiders/</span><br><span class="line">     __init__.py</span><br><span class="line">     spider1.py</span><br><span class="line">     spider2.py</span><br><span class="line">     ...     </span><br></pre></td></tr></table></figure>
-<p><strong>scrapy.cfg</strong>:Scrapy 项目配置文件，其内定义了项目的配置文件路径，部署相关信息等内容。<br><strong>item.py</strong>:定义了Item数据结构，所有的Item的定义都可以放在这里<br><strong>piplines.py</strong>:定义Item Pipline的实现，所有的Item Pipline 的实现都可以放这里。<br><strong>setting.py</strong>:定义项目的全局配置<br><strong>middleware.py</strong>:定义Spider Middleware和Dowmloader Middleware的实现。<br><strong>spider</strong>：其内包含一个个Spider的实现，每个Spider 都有一个文件。</p>
+<p># **kwargs表示关键字参数，它是一个dict</p>
+<p># 注：同时使用<em>args和**kwargs时，</em>args参数列必须要在**kwargs前</p>
+<p># eg _v1</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">f,*args</span>):</span></span><br><span class="line"><span class="keyword">print</span> (<span class="string">&quot;formal arg:&quot;</span>,f)</span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> args:</span><br><span class="line"><span class="keyword">print</span> (<span class="string">&quot;another arg&quot;</span>,f)</span><br><span class="line"> </span><br><span class="line">func(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># (&#x27;formal arg:&#x27;, 1)</span></span><br><span class="line"><span class="comment"># (&#x27;another arg&#x27;, 2)</span></span><br><span class="line"><span class="comment"># (&#x27;another arg&#x27;, 3)</span></span><br><span class="line"><span class="comment"># (&#x27;another arg&#x27;, 4)</span></span><br></pre></td></tr></table></figure>
 
+<p># eg _v2</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">functions</span>(<span class="params">farg, **kwargs</span>):</span></span><br><span class="line"><span class="keyword">print</span> (<span class="string">&quot;farmal arg:&quot;</span>,farg)</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> kwargs:</span><br><span class="line"><span class="keyword">print</span> (<span class="string">&quot;another keyword arg:%s: %s&quot;</span> % (key, kwargs[key]))</span><br><span class="line"> </span><br><span class="line">functions(farg=<span class="number">1</span>,myarg2=<span class="number">2</span>,myarg3=<span class="number">3</span>,myarg4=<span class="number">4</span>)</span><br><span class="line"><span class="comment"># (&#x27;farmal arg:&#x27;, 1)</span></span><br><span class="line"><span class="comment"># another keyword arg:myarg4: 4</span></span><br><span class="line"><span class="comment"># another keyword arg:myarg2: 2</span></span><br><span class="line"><span class="comment"># another keyword arg:myarg3: 3</span></span><br></pre></td></tr></table></figure>
+
+<p># eg_v3</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">functions</span>(<span class="params">*args,**kwargs</span>):</span></span><br><span class="line"><span class="keyword">print</span> (<span class="string">&quot;args= &quot;</span>,args)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">&quot;kwargs= &quot;</span>,kwargs)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">&quot;+&quot;</span>*<span class="number">18</span>)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">functions(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br><span class="line"><span class="comment"># (&#x27;args= &#x27;, (1, 2, 3, 4, 5))</span></span><br><span class="line"><span class="comment"># (&#x27;kwargs= &#x27;, &#123;&#125;)</span></span><br><span class="line"><span class="comment"># ++++++++++++++++++</span></span><br><span class="line">functions(a=<span class="number">1</span>,b=<span class="number">2</span>,c=<span class="number">3</span>,d=<span class="number">4</span>)</span><br><span class="line"><span class="comment"># (&#x27;args= &#x27;, ())</span></span><br><span class="line"><span class="comment"># (&#x27;kwargs= &#x27;, &#123;&#x27;a&#x27;: 1, &#x27;c&#x27;: 3, &#x27;b&#x27;: 2, &#x27;d&#x27;: 4&#125;)</span></span><br><span class="line"><span class="comment"># ++++++++++++++++++</span></span><br><span class="line">functions(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,a=<span class="number">1</span>,b=<span class="number">2</span>,c=<span class="number">3</span>)</span><br><span class="line"><span class="comment"># (&#x27;args= &#x27;, (1, 2, 3))</span></span><br><span class="line"><span class="comment"># (&#x27;kwargs= &#x27;, &#123;&#x27;a&#x27;: 1, &#x27;c&#x27;: 3, &#x27;b&#x27;: 2&#125;)</span></span><br><span class="line"><span class="comment"># ++++++++++++++++++</span></span><br></pre></td></tr></table></figure>
       
 
       
@@ -248,7 +249,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/16/Scrapy%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BB%8B%E7%BB%8D/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/10/12/Python%E4%B8%ADargs%E5%92%8Ckwargs%20%E7%9A%84%E5%8C%BA%E5%88%AB/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -262,15 +263,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/10/12/Python%E4%B8%ADargs%E5%92%8Ckwargs%20%E7%9A%84%E5%8C%BA%E5%88%AB/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
+    <a href="/2020/08/16/Scrapy%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BB%8B%E7%BB%8D/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
